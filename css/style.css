@@ -1,5 +1,5 @@
 html, body {
-  background-color: rgb(91, 145, 64);
+  background-image: url("../resources/green1.jpg");
 }
 
 .game {
@@ -40,4 +40,6 @@ button {
   width: 60px;
   height: 40px;
   cursor: pointer;
+  border-radius: 15px;
+  background-color: white;
 }
