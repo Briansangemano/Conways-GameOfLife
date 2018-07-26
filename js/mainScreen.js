@@ -41,6 +41,10 @@ Validation = {
     }
   },
   includedNumber: function(A, B, number) {
-    return true;
+    if (number >= A && number <= B) {
+      return true;
+    } else {
+      return false;
+    }
   }
 }
