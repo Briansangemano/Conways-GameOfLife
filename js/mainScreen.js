@@ -33,7 +33,12 @@ var Screen = {
 }
 Validation = {
   onlyNumbers: function(text) {
-    return true;
+    var Number = /^[0-9]+$/;
+    if (text.match(Number)) {
+      return true;
+    } else {
+      return false;
+    }
   },
   includedNumber: function(A, B, number) {
     return true;
