@@ -1,0 +1,81 @@
+.mainScreen {
+  display: flex;
+  flex-wrap: wrap;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(91, 145, 64);
+}
+
+.mainScreen .content {
+  position: relative;
+  background-color: rgb(188, 220, 161);
+  margin: auto;
+  padding: 20px;
+  border: 3px solid #000;
+  width: 80%;
+  height: auto;
+  overflow: visible;
+  box-shadow: 0 4px 8px 0 rgb(91, 145, 64), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+legend {
+  font: normal 4em arial, sans-serif;
+  text-align: center;
+  margin: 50px;
+  border-bottom: 0px solid rgb(61, 122, 64);
+}
+
+form div {
+  border-bottom: 0px solid rgb(94, 94, 94);
+  height: 125px;
+  text-align: center;
+  padding: 20px;
+}
+
+label {
+  font: normal 1em arial, sans-serif;
+  display: block;
+}
+
+input[type='text'] {
+  margin-top: 20px;
+  padding: 10px;
+  display: inline;
+  border: 1px solid #ccc;
+}
+
+input[type='text']:hover, input[type='text']:focus {
+  outline: none !important;
+  border: 1px solid rgb(187, 215, 92);
+}
+
+p.help {
+  margin: 10px;
+  font: normal 0.8em arial, sans-serif;
+
+}
+
+input[type='text'] {
+  display: inline;
+  position: relative;
+  top: 0;
+  right: 0;
+  width: auto;
+}
+
+input[type='button'] {
+  font-size: 1.5em;
+  margin: .5em 3em .5em 0;
+  padding: 20px;
+  border-radius: 8px;
+
+}
+
+input[type='button']:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
