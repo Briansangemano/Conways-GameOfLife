@@ -3,6 +3,8 @@ var Game = {
   play: null,
   board: null,
   cells: null,
+  interval: null,
+
   showGame: function() {
     document.getElementsByClassName('game')[0].style.display = 'flex';
   },
@@ -23,6 +25,15 @@ var Game = {
     Game.play.onclick = Game.update;
   },
   update: function() {
-    setInterval(Board.nextStep, 1000);
+    if (Game.play.innerHTML === 'PLAY') {
+    Game.interval = setInterval(Board.nextStep, 1000);
+    Game.play.innerHTML = 'STOP';
+    Game.next.disabled = true;
+  } else {
+    clearInterval(Game.interval);
+    Game.play.innerHTML = 'PLAY';
+    Game.next.disabled = false;
   }
+  },
+
 };

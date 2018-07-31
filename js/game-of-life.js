@@ -15,16 +15,16 @@ var GameOfLife = {
     var row = [];
     for (var i = 0; i < cells.length; i++) {
       var cell = cells[i];
-      var isAlive = cell.className === 'alive'; // Return false or true
+      var isAlive = cell.className === 'alive';
       row.push(isAlive);
-      if (i % cols === (cols - 1)) { // If i mod 5 equal to 4 => when mod === 4, 5 cells inside the array row.
-        board.push(row); // Push of array
-        row = []; // Empty the array
+      if (i % cols === (cols - 1)) {
+        board.push(row);
+        row = [];
       }
     }
     return board;
   },
-  getNextStep: function(a, b) { // a=current board b=new board
+  getNextStep: function(a, b) { 
     for (var i = 0; i < a.length; i++) {
       var row = a[i];
       for (var j = 0; j < row.length; j++) {
@@ -38,31 +38,17 @@ var GameOfLife = {
   applyRule: function(currentBoard, posY, posX) {
     var cell = currentBoard[posX][posY];
     var count = 0;
-    if (currentBoard[posY - 1] && currentBoard[posY - 1][posX - 1])
-      ++count;
-    if (currentBoard[posY - 1] && currentBoard[posY - 1][posX])
-      ++count;
-    if (currentBoard[posY - 1] && currentBoard[posY - 1][posX + 1])
-      ++count;
-    if (currentBoard[posY][posX + 1])
-      ++count;
-    if (currentBoard[posY][posX - 1])
-      ++count;
-    if (currentBoard[posY + 1] && currentBoard[posY + 1][posX - 1])
-      ++count;
-    if (currentBoard[posY + 1] && currentBoard[posY + 1][posX])
-      ++count;
-    if (currentBoard[posY + 1] && currentBoard[posY + 1][posX + 1])
-      count++;
-    if (cell === false) {
-      if (count >= 3) {
-        return true;
-      }
-    }
-    if (cell === true) {
-      if (count === 2 || count === 3) {
-        return true;
-      }
-    }
+    if(currentBoard[posX-1] && currentBoard[posX-1][posY-1]) ++count;
+    if(currentBoard[posX-1] && currentBoard[posX-1][posY]) ++count;
+    if(currentBoard[posX-1] && currentBoard[posX-1][posY+1]) ++count;
+    if(currentBoard[posX] && currentBoard[posX][posY-1]) ++count;
+    if(currentBoard[posX] && currentBoard[posX][posY+1]) ++count;
+    if(currentBoard[posX+1] && currentBoard[posX+1][posY-1]) ++count;
+    if(currentBoard[posX+1] && currentBoard[posX+1][posY]) ++count;
+    if(currentBoard[posX+1] && currentBoard[posX+1][posY+1]) ++count;
+    var rule1 = !cell && count >=3;
+    var rule2 = cell && (count === 2 || count === 3);
+    return rule1 || rule2;
+    return true;
   }
 };
