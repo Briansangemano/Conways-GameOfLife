@@ -2,7 +2,7 @@ var Screen = {
   accept: null,
   number: 0,
   getStart: function() {
-    return document.getElementById('Start');
+    return document.getElementById('start');
   },
   getNumber: function() {
     return document.getElementById('cellnumber').value;
@@ -33,8 +33,8 @@ var Screen = {
 }
 Validation = {
   onlyNumbers: function(text) {
-    var Number = /^[0-9]+$/;
-    if (text.match(Number)) {
+    var number = /^[0-9]+$/;
+    if (text.match(number)) {
       return true;
     } else {
       return false;

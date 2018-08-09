@@ -26,14 +26,14 @@ var Game = {
   },
   update: function() {
     if (Game.play.innerHTML === 'PLAY') {
-    Game.interval = setInterval(Board.nextStep, 1000);
-    Game.play.innerHTML = 'STOP';
-    Game.next.disabled = true;
-  } else {
-    clearInterval(Game.interval);
-    Game.play.innerHTML = 'PLAY';
-    Game.next.disabled = false;
-  }
+      Game.interval = setInterval(Board.nextStep, 1000);
+      Game.play.innerHTML = 'STOP';
+      Game.next.disabled = true;
+    } else {
+      clearInterval(Game.interval);
+      Game.play.innerHTML = 'PLAY';
+      Game.next.disabled = false;
+    }
   },
 
 };

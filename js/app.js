@@ -8,4 +8,8 @@ var init = function() {
   Screen.InputFocus();
 }
 
+var refrescar = function() {
+  location.reload(true);
+}
+
 window.onload = init;

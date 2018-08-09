@@ -1,5 +1,5 @@
 html, body {
-  background-image: url("../resources/green1.jpg");
+  background-image: url("../resources/Fondo2.jpeg");
 }
 
 .game {
@@ -11,7 +11,7 @@ html, body {
 }
 
 .board {
-  background-color: rgb(188, 220, 161);
+  background-color: rgb(2, 178, 0);
   border-style: solid;
   border-width: 2px;
   border-color: #000;
